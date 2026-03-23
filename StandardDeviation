@@ -1,0 +1,23 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package concurrency;
+
+import java.util.List;
+
+public class StandardDeviation {
+
+    public static double calculate(List<Integer> data) {
+        double mean = data.stream().mapToInt(i -> i).average().orElse(0);
+
+        // Parallel calculation
+        double variance = data.parallelStream()
+                .mapToDouble(i -> Math.pow(i - mean, 2))
+                .average()
+                .orElse(0);
+
+        return Math.sqrt(variance);
+    }
+}

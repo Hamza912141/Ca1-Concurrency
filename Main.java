@@ -7,4 +7,6 @@ public class Main {
 
         List<Integer> data = CSVReader.readCSV("C:\\Users\\hp\\Documents\\NetBeansProjects\\Concurrency\\src\\concurrency\\data.csv");
 
-    
+    // 1. Standard Deviation
+        double sd = StandardDeviation.calculate(data);
+        System.out.println("Standard Deviation: " + sd);

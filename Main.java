@@ -28,3 +28,10 @@ public class Main {
         System.out.println("Matrix Multiplication Done");
         
         MatrixMultiplication.printMatrix(result);
+ // 3. Merge Sort
+        int[] arr = data.stream().mapToInt(i -> i).toArray();
+        ParallelMergeSort.sort(arr);
+
+        System.out.println("Sorted (Descending): " + Arrays.toString(arr));
+    }
+}
